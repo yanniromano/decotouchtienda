@@ -1,7 +1,7 @@
 import './Item.css'
 
 
-const Item = ({ name, img, description }) => {
+const Item = ({ name, img, description, category, price, }) => {
     return (
         <div className="contenedor">
             <ul>
