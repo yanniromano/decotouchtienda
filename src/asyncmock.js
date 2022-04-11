@@ -1,38 +1,53 @@
 const products = [
     {
-        id: 1,
+        id: '1',
         name: 'PLANCHA CIRCULOS',
-        price: 1600,
-        category: 'Plancha',
-        img: './images/productos/01.jpg',
+        price: '$1.600',
+        category: 'nuevo',
+        img: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/139/735/products/subway-biselado-blanco-junta-gris1-fb4b4e93620a61eb1f15924291988302-320-0.jpg',
         stock: 25,
         description: 'Las planchas de vinilo son geniales para decorar grandes superficies y crear falsos empapelados. Medida plancha: 60 x 60 CM '
     },
     {
-        id: 2,
+        id: '2',
         name: 'PLANCHA ABSTRACTO PASTEL',
-        price: 2.480, category: 'Plancha',
-        img: './images/productos/02.jpg',
+        price: '$ 2.480',
+        category: 'espacios',
+        img: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/139/735/products/f4b957dc64790edf5632c590178456001-1a4808cc71e23fcd0b15232920421047-640-0.jpg',
         stock: 16,
         description: 'Las planchas de vinilo son geniales para decorar grandes superficies y crear falsos empapelados. Medida plancha: 55 x 130 cm'
     },
 
     {
-        id: 3,
+        id: '3',
         name: 'PLANCHA PLANTAS COLORES',
-        price: 1200,
-        category: 'tablet',
-        img: './images/productos/03.jpg',
+        price: '$ 1.980',
+        category: 'mural',
+        img: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/139/735/products/ramitas-cuadrado1-ebd56fc6a78187903216256830259417-640-0.jpg', stock: 10,
         stock: 10,
         description: 'Las planchas de vinilo son geniales para decorar grandes superficies y crear falsos empapelados. Medida plancha:  Medida plancha: 60 x 130 cm'
     }
 ]
 
-export const getProducts = () => {
+const categories = [
+    { id: 'mural', description: 'Murales' },
+    { id: 'nuevo', description: 'Lo Nuevo!' },
+    { id: 'espacios', description: 'Espacios' }
+]
+
+export const getCategories = () => {
     return new Promise(resolve => {
         setTimeout(() => {
-            resolve(products)
-        }, 2000)
+            resolve(categories)
+        }, 500)
+    })
+}
+
+export const getProducts = (categoryId) => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(categoryId ? products.filter(prod => prod.category === categoryId) : products)
+        }, 500)
     })
 }
 
@@ -40,6 +55,6 @@ export const getProductsById = (id) => {
     return new Promise(resolve => {
         setTimeout(() => {
             resolve(products.find(prod => prod.id === id))
-        }, 2000)
+        }, 500)
     })
 }

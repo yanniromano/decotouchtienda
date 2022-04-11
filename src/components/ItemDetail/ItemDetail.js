@@ -3,26 +3,35 @@ import './ItemDetail.css'
 const ItemDetail = ({ id, name, img, price, category, description, stock }) => {
 
     return (
-        <div className="contenedor">
-            <ul>
-                <li className="card">
-                    <a ><img src={img} alt={name} className="card-image" />
-                    </a>
-                    <a className="card-description">  <h2 >{id} {name}</h2>
-                        <p className="card-description">{description}</p>
-                        <p className="card-description">{price}</p>
-                        <p className="card-description">{category}</p>
-                        <p className="card-description">{stock}</p>
 
-                    </a>
-                    <button className="bubbly-button">Ver Detalle</button>
-                </li>
-            </ul>
-
+        < div className="container" >
+            <div class="gridProduct">
+                <div className="columnFotos">
+                    <div className="productGallery">
+                        <div className="productImage">
+                            <img src={img} alt={name} className="imgPrincipal" />
+                        </div>
+                        <div className="imageList">
+                            <div className="imageItem"><img src={img} /></div>
+                            <div className="imageItem"><img src={img} /></div>
+                            <div className="imageItem"><img src={img} /></div>
+                        </div>
+                    </div>
+                </div>
+                <div className="columnDatos">
+                    <h1>{name}</h1>
+                    <h3>{category}</h3>
+                    <h2>{price}</h2>
+                    <div className="description"><p>Stock disponible: {stock} Unidades</p>
+                        <p>{description}</p>
+                    </div>
+                    <button className="addtocart">Agregar al Carrito</button>
+                </div>
+            </div>
         </div >
-
-
     )
 }
 
 export default ItemDetail
+
+
