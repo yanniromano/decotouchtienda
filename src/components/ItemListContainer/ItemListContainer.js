@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { getProducts } from '../../asyncmock'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
+import Banner from '../Banner/Banner'
 
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState([])
@@ -19,6 +20,7 @@ const ItemListContainer = (props) => {
     return (
         <div>
             <h1>{props.greeting}</h1>
+            <Banner />
             <ItemList products={products} />
         </div>
     )

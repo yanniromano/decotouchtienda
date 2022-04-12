@@ -14,28 +14,29 @@ const NavBar = () => {
     }, [])
 
     return (
-        <nav className="NavBar" >
-            <div classNname="NavBar">
-                <nav className="flexmenus">
-                    <div>
-                        <Link to='/'>
-                            <h3>Decotouch</h3>
-                        </Link>
-                    </div>
-                    <input type="checkbox" id="check" />
-                    <label for="check" className="bar-btn">
-                        <i class="fas fa-bars" aria-hidden="true"></i>
-                    </label>
-                    <ul className="nav-menu">
-                        {categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`}
-                            className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}
-                        >{cat.description}</NavLink>)}
-                    </ul>
 
-                    <div><CartWidget /></div>
-                </nav>
-            </div>
-        </nav>
+        <div classNname="NavBar">
+            <nav className="flexmenus">
+                <div>
+                    <Link to='/'>
+                        <img src='./images/logoDecotouch.png' alt='Decotouch' className="logo" />
+                    </Link>
+                </div>
+                <input type="checkbox" id="check" />
+                <label for="check" className="bar-btn">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </label>
+                <ul className="nav-menu">
+                    <li> {categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`}
+                        className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}
+                    >{cat.description}</NavLink>)}</li>
+                </ul>
+                <div><CartWidget /></div>
+            </nav>
+
+
+        </div>
+
     )
 }
 

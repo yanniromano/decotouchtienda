@@ -6,8 +6,8 @@ import NavBar from './components/NavBar/NavBar'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 
+
 const App = () => {
-  // const [show, setShow] = useState({ path: 'list', param: '1'})
 
   return (
     <div className="App">

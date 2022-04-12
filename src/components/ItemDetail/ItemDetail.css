@@ -1,42 +1,12 @@
-.contenedorDetalle {
-    display: flex;
-
-}
-
-
 .price {
     margin: 0;
 }
 
-.breadcrumbList {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 1rem 0 0 0;
-    list-style: none;
-}
-
-.breadcrumbList li {
-    font-size: 0.85rem;
-    letter-spacing: 0.125rem;
-    text-transform: uppercase;
-}
-
-.breadcrumbItem.active {
-    color: #333;
-}
-
-.breadcrumbItem .breadcrumbItem::before {
-    content: '/';
-    display: inline-block;
-    padding: 0 0.5rem;
-    color: #d5d5d5;
-}
-
 .description {
-    border-top: 0.0625rem solid #e3dddd;
-    margin: 2rem 0;
+    border-top: 0.0625rem solid #3e3e3f;
+    margin: 1rem 0;
     padding: 1rem 0 0 0;
+    width: 60%;
 }
 
 .addtocart {
@@ -73,90 +43,79 @@
     transition: transform 0.3s ease-out;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .container {
     margin: auto;
     padding: 0 1rem;
     max-width: 75rem;
-    width: 100%;
+    width: 90%;
 }
 
-.grid>[class*="column-"] {
-    padding: 1rem;
+.imgPrincipal {
+    height: 100%;
 }
 
-.gridProduct {
-    display: -ms-flexbox;
+.ItemDetailContainer {
+    display: -ms-flex;
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
+    background-color: aliceblue;
+    padding-top: 60px;
+    height: 100vh;
+}
+
+.flexboxContainer {
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flexboxContainer>div {
+    width: 50%;
+    padding: 10px;
+}
+
+.flexboxContainer>div:first-child {
+    margin-right: 20px;
+}
+
+.columnFotos {
+    margin: 0px 10px;
+    display: flex;
+    flex-wrap: nowrap;
     flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    -webkit-align-content: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.gridProduct:nth-child(1) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-}
-
-.gridProduct:nth-child(2) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-}
-
-.gridProduct {
-    padding: 0 0 1.5rem 0;
-}
-
-.gridSecond-nav>[class*="column-"] {
-    padding: 0.5rem 1rem;
-}
-
-footer {
-    padding: 1rem 0;
-    text-align: center;
-}
-
-.productImage {
-    display: none;
+    justify-content: center;
 }
 
 .imageList {
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 380px;
+    justify-content: space-between;
+}
+
+.imageList img {
+    height: 100px;
+    width: 100px;
 }
 
 .imageItem {
-    margin: 15px;
+    margin: 5px;
 }
 
 h2 {
     font-size: 3em;
+    margin-top: 0px;
 }
+
+h1 {
+    margin-bottom: 0px;
+}
+
 
 @media (min-width:760px) {
 
@@ -165,12 +124,6 @@ h2 {
     }
 
     .imgPrincipal {
-        width: 100%;
-    }
-
-
-
-    .imageList {
         width: 100%;
     }
 
@@ -184,48 +137,11 @@ h2 {
 
     .productImage {
         display: block;
-        margin: 0 0 0.75rem 0;
+        margin: 0 0 0.55rem 0;
     }
 
     img.active {
         display: block;
-        margin: 0 0 0.75rem 0;
-    }
-
-    .imageList {
-        display: flex;
-        overflow: hidden;
-    }
-
-    .imageList li {
-        margin: 0 0.75rem 0 0;
-        flex-basis: 100%;
-    }
-
-    .imageList li:nth-child(3) {
-        margin: 0;
-    }
-
-    .imageList img {
-        height: 10rem;
-        width: 100%;
-        transition: opacity 0.3s ease;
-        cursor: pointer;
-    }
-
-    .imageList img:hover {
-        opacity: 0.7;
-    }
-
-
-}
-
-@keyframes fadeImg {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
+        margin: 0 0 0.55rem 0;
     }
 }
