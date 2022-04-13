@@ -5,7 +5,7 @@
     flex-direction: nowrap !important;
     justify-content: center;
     align-items: center;
-    background-color: #470350;
+    background-color: #e0e0e0;
 }
 
 
@@ -23,7 +23,10 @@
     overflow: hidden;
     box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, 0.5);
     transition: transform 0.1s ease-in-out;
-    background: #fff center center no-repeat;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow: 24px 24px 52px #bebebe,
+        -24px -24px 52px #ffffff;
     text-align: center;
 }
 

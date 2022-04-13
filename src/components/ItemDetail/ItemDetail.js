@@ -3,6 +3,7 @@ import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 
 
+
 const ItemDetail = ({ id, name, img, price, category, description, stock }) => {
 
     return (
@@ -27,6 +28,7 @@ const ItemDetail = ({ id, name, img, price, category, description, stock }) => {
                         <p>{description}</p>
                         <p className="bold">Stock disponible: {stock} Unidades</p>
                     </div>
+
                     <ItemCount />
                 </div>
             </div>
