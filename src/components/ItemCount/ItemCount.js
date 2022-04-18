@@ -1,8 +1,33 @@
-import './ItemCount.css'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import './ItemCount.css'
+const ItemCount = ({ initial, stock, onAdd }) => {
+    const [count, setCount] = useState(0)
 
 
+    const decrement = () => {
+        setCount(count - 1)
+    }
+
+    const increment = () => {
+        setCount(count + 1)
+    }
+
+    return (
+        <div className="contenedorCount">
+            <div className="flexconteiner">
+                <button onClick={decrement} className="buttonDecrement">-</button>
+                <p>{count}</p>
+                <button onClick={increment} className="buttonIncrement">+</button>
+            </div>
+
+            <button onClick={() => onAdd(count)} className="addtocart">Agregar al carrito</button>
+        </div>
+    )
+}
+
+export default ItemCount
+
+/* 
 const ButtonCount = ({ onConfirm, stock, initial = 0 }) => {
     const [count, setCount] = useState(initial)
     const decrement = () => {
@@ -24,7 +49,7 @@ const ButtonCount = ({ onConfirm, stock, initial = 0 }) => {
                 <p>{count}</p>
                 <button className="buttonIncrement" onClick={increment}>+</button>
             </div>
-            <button className="addtocart" onClick={() => onConfirm(count)}>Agregar al carrito</button>
+            <button className="addtocart" onClick={() => onAdd(count)}>Agregar al carrito</button>
         </div>
     )
 }
@@ -41,4 +66,4 @@ const ItemCount = ({ id, name, img, category, description, price, stock }) => {
         </div>
     );
 }
-export default ItemCount
+export default ItemCount */

@@ -1,10 +1,24 @@
-import { useState } from 'react';
-import './ItemDetail.css';
-import ItemCount from '../ItemCount/ItemCount';
+import './ItemDetail.css'
+import { useState, useContext } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
+import ItemCount from '../ItemCount/ItemCount'
+import CartContext from '../../context/CartContext'
 
 
 
-const ItemDetail = ({ id, name, img, price, category, description, stock }) => {
+
+const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
+
+    const { addItem, isInCart } = useContext(CartContext)
+
+    const handleAdd = (count) => {
+        const productObj = {
+            id, name, price, quantity: count
+        }
+
+        addItem(productObj)
+    }
+
 
     return (
         <div className="flexboxContainer">
@@ -29,7 +43,9 @@ const ItemDetail = ({ id, name, img, price, category, description, stock }) => {
                         <p className="bold">Stock disponible: {stock} Unidades</p>
                     </div>
 
-                    <ItemCount />
+                    {isInCart(id) ? <Link to='/cart' className="addtocart">Ir al carrito</Link> : <ItemCount onAdd={handleAdd} stock={stock} />}
+
+                    {/* <ItemCount /> */}
                 </div>
             </div>
 

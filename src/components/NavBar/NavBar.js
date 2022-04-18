@@ -31,7 +31,7 @@ const NavBar = () => {
                         className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}
                     >{cat.description}</NavLink>)}</li>
                 </ul>
-                <div><CartWidget /></div>
+                <CartWidget />
             </nav>
 
 

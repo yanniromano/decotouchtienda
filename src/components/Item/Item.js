@@ -1,7 +1,15 @@
 import './Item.css'
 import { Link } from 'react-router-dom'
 
-const Item = ({ id, name, img, price, description }) => {
+
+
+const Item = ({ id, name, img, price }) => {
+
+    const handleClick = (e) => {
+        e.stopPropagation()
+        console.log('Hice click en item')
+    }
+
 
     return (
         <div className="contenedor">
