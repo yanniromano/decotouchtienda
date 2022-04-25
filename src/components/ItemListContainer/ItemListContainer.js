@@ -6,6 +6,7 @@ import Banner from '../Banner/Banner'
 
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState([])
+    const [title, setTitle] = useState()
 
     const { categoryId } = useParams()
 
@@ -17,10 +18,18 @@ const ItemListContainer = (props) => {
         })
     }, [categoryId])
 
+    /*  useEffect(() => {
+         setTimeout(() => {
+             setTitle('Este titulo aparecio despues de 2 seg')
+         }, 2000)
+     }) */
+
+
     return (
         <div>
             <h1>{props.greeting}</h1>
-            <Banner />
+            <Banner />{/* 
+            <h1>{title}</h1> */}
             <ItemList products={products} />
         </div>
     )

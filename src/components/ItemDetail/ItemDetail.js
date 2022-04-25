@@ -3,6 +3,7 @@ import { useState, useContext } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
 import CartContext from '../../context/CartContext'
+import { useNotification } from '../../notification/Notification'
 
 
 
@@ -11,14 +12,16 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
 
     const { addItem, isInCart } = useContext(CartContext)
 
-    const handleAdd = (count) => {
+    const { setNotification } = useNotification()
+
+    const handleAdd = (Count) => {
         const productObj = {
-            id, name, price, quantity: count
+            id, name, price, quantity: Count
         }
 
         addItem(productObj)
+        setNotification('error', `Se agregaron ${Count} ${name} correctamente`)
     }
-
 
     return (
         <div className="flexboxContainer">
@@ -42,9 +45,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
                         <p>{description}</p>
                         <p className="bold">Stock disponible: {stock} Unidades</p>
                     </div>
-
-                    {isInCart(id) ? <Link to='/cart' className="addtocart">Ir al carrito</Link> : <ItemCount onAdd={handleAdd} stock={stock} />}
-
+                    {isInCart(id) ? <Link to='/Cart' className="addtocart">Ir al carrito</Link> : <ItemCount onAdd={handleAdd} stock={stock} />}
                     {/* <ItemCount /> */}
                 </div>
             </div>
