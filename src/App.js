@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import { useState } from 'react'
 import './App.css';
-import NavBar from './components/NavBar';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import NavBar from './components/NavBar/NavBar'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { CartContextProvider } from './context/CartContext';
 
-function App() {
+import Cart from './components/Cart/Cart';
+import { NotificationProvider } from './notification/Notification';
+
+const App = () => {
   return (
     <div className="App">
-      <NavBar />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h3 style={{ color: 'white', margintop: '50px' }}> Próximamente Tienda Deco Touch</h3>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        </a>
-      </header>
-    </div >
+      <NotificationProvider>
+        <CartContextProvider>
+          <BrowserRouter>
+            <NavBar />
+            <Routes>
+              <Route path='*' element={<h1>NOT FOUND 404</h1>} />
+              <Route path='/' element={<ItemListContainer />} />
+              <Route path='/category/:categoryId' element={<ItemListContainer />} />
+              <Route path='/detail/:productId' element={<ItemDetailContainer />} />
+              <Route path='/cart' element={<Cart />} />
+            </Routes>
+          </BrowserRouter>
+        </CartContextProvider>
+      </NotificationProvider>
+    </div>
   );
 }
 

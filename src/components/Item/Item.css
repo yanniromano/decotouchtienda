@@ -1,0 +1,101 @@
+.ListGroup {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: nowrap !important;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0;
+}
+
+
+
+.card-list {
+    margin: 0 auto !important;
+
+}
+
+.card {
+    float: left !important;
+    margin: 2rem;
+    font-size: 1rem;
+    text-decoration: none;
+    overflow: hidden;
+    box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, 0.5);
+    transition: transform 0.1s ease-in-out;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow: 24px 24px 52px #bebebe,
+        -24px -24px 52px #ffffff;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-0.5rem) scale(1.0125);
+    box-shadow: 0 0.5em 3rem -1rem rgba(0, 0, 0, 0.5);
+}
+
+.card-image img {
+    height: 150px;
+}
+
+.card-image {
+    width: 100%;
+    height: 300px;
+    background: #fff center center no-repeat;
+    background-size: cover;
+    opacity: 1;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.card-image:hover {
+    width: 100%;
+    opacity: 0.8;
+}
+
+.card-description {
+    color: #a500bb;
+    text-decoration: none;
+}
+
+.card-description h2 {
+    font-size: 16px;
+}
+
+.card-description p {
+    margin: 0;
+    font-size: 14px;
+    color: rgb(168, 168, 168);
+    border-top: #a500bb solid 1px;
+}
+
+.bubbly-button {
+    font-family: "Helvetica", "Arial", sans-serif;
+    display: inline-block;
+    font-size: 1em;
+    padding: 1em 2em;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ff0081;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+    text-decoration: none;
+}
+
+.bubbly-button:focus {
+    outline: 0;
+}
+
+
+.bubbly-button:hover {
+    background-color: #a500bb;
+}
