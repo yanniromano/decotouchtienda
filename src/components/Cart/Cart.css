@@ -74,3 +74,24 @@
     background-color: #bb0000;
     color: #fff;
 }
+
+.textTotal {
+    color: #a500bb;
+    padding-top: 15px;
+}
+
+.ButtonFn {
+    background-color: #a500bb;
+    color: #fff;
+    margin: 15px;
+    padding: 10px;
+    border: none;
+    display: inline;
+    border-radius: 20px;
+}
+
+.ButtonFn:hover {
+    background-color: #38013f;
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
+}
